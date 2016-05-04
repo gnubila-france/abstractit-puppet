@@ -185,7 +185,7 @@ class puppet (
     file { $facterbasepath:
       ensure => directory,
       owner  => 'root',
-      group  => 'puppet',
+      group  => 'root',
       mode   => '0755',
     }
   }
@@ -194,7 +194,7 @@ class puppet (
     file { "${facterbasepath}/facts.d":
       ensure => directory,
       owner  => 'root',
-      group  => 'puppet',
+      group  => 'root',
       mode   => '0755',
     }
   }
