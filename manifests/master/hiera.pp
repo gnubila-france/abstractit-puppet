@@ -31,23 +31,23 @@ class puppet::master::hiera {
   if ( $eyaml_keys and $hiera_eyaml_pkcs7_private_key_file and $hiera_eyaml_pkcs7_public_key_file ){
     file { $hiera_eyaml_key_directory:
       ensure => directory,
-      owner  => 'puppet',
-      group  => 'puppet',
+      owner  => 'root',
+      group  => 'root',
       mode   => '0700',
     }
 
     file { "${hiera_eyaml_key_directory}/${hiera_eyaml_pkcs7_private_key}":
       ensure => file,
-      owner  => 'puppet',
-      group  => 'puppet',
+      owner  => 'root',
+      group  => 'root',
       mode   => '0600',
       source => $hiera_eyaml_pkcs7_private_key_file,
     }
 
     file { "${hiera_eyaml_key_directory}/${hiera_eyaml_pkcs7_public_key}":
       ensure => file,
-      owner  => 'puppet',
-      group  => 'puppet',
+      owner  => 'root',
+      group  => 'root',
       mode   => '0600',
       source => $hiera_eyaml_pkcs7_public_key_file,
     }
